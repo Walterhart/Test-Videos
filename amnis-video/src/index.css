@@ -27,8 +27,9 @@
   color: #35f15e;
 }
 
-.HomePage{
+.content{
+  display: flex;
   background-color: lightskyblue;
-  text-align: center;
   padding: 20px;
+  
 }
