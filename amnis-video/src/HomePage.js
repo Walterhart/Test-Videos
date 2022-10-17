@@ -13,10 +13,11 @@ const HomePage = () => {
 
     return (  
         <div className="HomePage">
+            {/* Map and display videos data */}
             {videos.map((video) =>(
                 <div className="VideoPreview" key = {video.id}>
                     <h2>{video.title}</h2>
-                    <p>{video.directors}</p>
+                    <p>Directors: {video.directors}</p>
                 </div>
 
             ))}
