@@ -7,7 +7,7 @@ const HomePage = () => {
           {title: "Cyberpunk: Edgerunners", description: "A street kid tries to survive in a technology and body modification-obsessed city of the future; with everything to lose, he chooses to stay alive by becoming an edgerunner: a mercenary outlaw, also known as a cyberpunk.",
           directors:"Hiroyuki Imaishi", source:"Netflix", id: "2"},
           {title:"Lilo & Stitch", description: "A tale of a young girl's close encounter with the galaxy's most wanted extraterrestrial. Lilo is a lonely Hawaiian girl who adopts a small ugly 'dog,' whom she names Stitch. Stitch would be the perfect pet if he weren't in reality a genetic experiment who has escaped from an alien planet and crash-landed on Earth. Through her love, faith and unwavering belief in ohana, the Hawaiian concept of family, Lilo helps unlock Stitch's heart and gives him the ability to care for someone else.",
-          directors:"Chris Sanders, Dean DeBlois", source:"Disney", id: "3"},
+          directors:"Chris Sanders, Dean DeBlois", source:"Disney", id: "3"}
     ]);
     
 
@@ -19,7 +19,7 @@ const HomePage = () => {
                     <p>{video.directors}</p>
                 </div>
 
-            ))};
+            ))}
         </div>
     );
 }
