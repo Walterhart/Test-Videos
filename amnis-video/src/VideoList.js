@@ -1,5 +1,7 @@
 // Video List components
 
+import { Link } from "react-router-dom";
+
 const VideoList = (props) => {
 
     //Access videos in props
@@ -13,8 +15,10 @@ const VideoList = (props) => {
             {/* Map and display videos data */}
             {videos.map((video) =>(
                 <div className="VideoPreview" key = {video.id}>
+                    <Link to= {`videos/${video.id}`}>
                     <h2>{video.title}</h2>
                     <p>Directors: {video.directors}</p>
+                    </Link>              
                 </div>
 
             ))}
