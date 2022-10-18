@@ -17,8 +17,7 @@ const HomePage = () => {
     // at start and everytime data change
     useEffect (() => {
         console.log('use effect ran')
-        console.log(videos);
-    });
+    }, []);
 
     return (  
         <div className="HomePage">
