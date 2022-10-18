@@ -1,6 +1,3 @@
-import { useState } from "react";
-//run code on every render
-import { useEffect } from "react";
 import useFetch from "./useFetch";
 import VideoList from "./VideoList";
 
