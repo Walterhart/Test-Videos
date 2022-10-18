@@ -11,13 +11,16 @@ const useFetch = (url) => {
         fetch from db.json then pass json into javascript object
         then takes datas and then change pending false
         includes error handling for conection problems
+        Also includes abort handling
      */
     useEffect (() => {
+        const abortConst = new AbortController();
+
         setTimeout(() => {
             console.log('use effect ran')
-            fetch(url)
+            fetch(url, {signal: abortConst.signal})
                 .then(res => {
-                    if(!res.ok){
+                    if (!res.ok){
                       throw Error('Issue fetching data')
                     }
                     return res.json();
@@ -29,11 +32,16 @@ const useFetch = (url) => {
                     setError(null);
                 })
                 .catch(err =>{
-                    setError(err.message);
-                    console.log(err.message);
-                    setIsPending(false);
+                    if (err.name === 'AbortError') {
+                        console.log('fetch aborted');
+                    }else{
+                        setError(err.message);
+                        console.log(err.message);
+                        setIsPending(false);
+                    }
                 })
          }, 0);
+         return () => abortConst.abort();
     }, [url]);
     return {data, isPending, error};
 }
