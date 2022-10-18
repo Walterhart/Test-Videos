@@ -45,8 +45,17 @@
 .VideoPreview:hover {
   box-shadow: 1px 3px 5px #fafafa;;
 }
+.VideoPreview a {
+  text-decoration: none;
+}
 .VideoPreview h2 {
   font-size: 20px;
   color: #fafafa;;
   margin-bottom: 8px;
+}
+.videoDetails h3{
+  margin-top: 10px;
+}
+.videoDetails p{
+  text-indent: 30px;
 }
