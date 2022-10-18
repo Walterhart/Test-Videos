@@ -1,4 +1,6 @@
 import { useState } from "react";
+//run code on every render
+import { useEffect } from "react";
 import VideoList from "./VideoList";
 
 const HomePage = () => {
@@ -11,6 +13,12 @@ const HomePage = () => {
           directors:"Chris Sanders, Dean DeBlois", source:"Disney", id: "3"}
     ]);
     
+    // run everytime rerender
+    // at start and everytime data change
+    useEffect (() => {
+        console.log('use effect ran')
+        console.log(videos);
+    });
 
     return (  
         <div className="HomePage">
