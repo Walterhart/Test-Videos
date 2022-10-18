@@ -1,4 +1,5 @@
 import { useState } from "react";
+import VideoList from "./VideoList";
 
 const HomePage = () => {
     const [videos, setVideos] = useState([
@@ -13,14 +14,9 @@ const HomePage = () => {
 
     return (  
         <div className="HomePage">
-            {/* Map and display videos data */}
-            {videos.map((video) =>(
-                <div className="VideoPreview" key = {video.id}>
-                    <h2>{video.title}</h2>
-                    <p>Directors: {video.directors}</p>
-                </div>
-
-            ))}
+            {/*videos is a prop
+               pass data into child component*/ }
+            <VideoList videos = {videos} title = {"All titles"}/>
         </div>
     );
 }
