@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AddVideo from './AddVideo';
 import VideoDetails from './VideoDetails';
+import Error404 from './Error404';
 
 function App() {
  
@@ -20,7 +21,10 @@ function App() {
               </Route>
               <Route path = "/videos/:id">
                 <VideoDetails/>
-              </Route>              
+              </Route>    
+              <Route path = "*">
+                <Error404/>
+              </Route>          
             </Switch>
           </div> 
     </div>
