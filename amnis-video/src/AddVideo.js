@@ -7,11 +7,27 @@ const AddVideo = () => {
     const [description, setDescription] = useState('');
     const [directors, setDirector] = useState('');
     const [source, setSource] = useState('');
+    const [isPending, setIsPending] = useState(false);
+    
+    // hanlde form when sumbited
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const video = { title,description, directors, source  }
 
+        setIsPending(true);
+        fetch('http://localhost:8000/videos',{
+            method: 'Post',
+            headers: { "Content-Type":"application/json"},
+            body: JSON.stringify(video)
+        }) .then(() => {
+            console.log('Video submited');
+            setIsPending(false);
+        })
+    }
     return (  
         <div className="addVideo">
             <h2>Add new video</h2>
-            <form>
+            <form onSubmit = {handleSubmit}>
                 <label>Title</label>
                     <input 
                         type = "text"
@@ -42,7 +58,8 @@ const AddVideo = () => {
                     onChange = {(e) => setDescription(e.target.value)}
                 ></textarea>
                 
-                <button> Add video </button>
+                {!isPending && <button> Add video </button>}
+                {isPending && <button disabled> Adding video ..</button>}
             </form>
             <p>{title} </p>
             <p>{description} </p>
