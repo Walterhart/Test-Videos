@@ -1,6 +1,7 @@
 // Add video component
 
 import { useState } from "react";
+import { useHistory} from "react-router-dom";
 
 const AddVideo = () => {
     const [title, setTitle] = useState('');
@@ -8,7 +9,7 @@ const AddVideo = () => {
     const [directors, setDirector] = useState('');
     const [source, setSource] = useState('');
     const [isPending, setIsPending] = useState(false);
-    
+    const history = useHistory();
     // hanlde form when sumbited
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,7 +23,9 @@ const AddVideo = () => {
         }) .then(() => {
             console.log('Video submited');
             setIsPending(false);
+            history.push('/');
         })
+        
     }
     return (  
         <div className="addVideo">
@@ -61,9 +64,7 @@ const AddVideo = () => {
                 {!isPending && <button> Add video </button>}
                 {isPending && <button disabled> Adding video ..</button>}
             </form>
-            <p>{title} </p>
-            <p>{description} </p>
-            <p>{source} </p>
+        
         </div>
     );
 }
