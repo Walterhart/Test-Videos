@@ -4,13 +4,22 @@ import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AddVideo from './AddVideo';
 import VideoDetails from './VideoDetails';
 import Error404 from './Error404';
+import SignUp from './SignUp';
+import Login from './Login';
+import SignInOutTab from './SignInOutTab';
+
 
 function App() {
  
   return (
+   
     <Router>
+      
     <div className="App">
-        <Navbar/>
+      <div className="header">                   
+          <Navbar/>
+        
+      </div>
           <div className="content">
             <Switch>
               <Route exact path = "/">
@@ -21,7 +30,16 @@ function App() {
               </Route>
               <Route path = "/videos/:id">
                 <VideoDetails/>
-              </Route>    
+              </Route>  
+              <Route path = "/Login">
+                <Login/>
+              </Route> 
+              <Route path = "/SignInOutTab">
+                <SignInOutTab/>
+              </Route> 
+              <Route path = "/Sign-up">
+                <SignUp/>
+              </Route>  
               <Route path = "*">
                 <Error404/>
               </Route>          

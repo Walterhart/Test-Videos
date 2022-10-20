@@ -2,6 +2,7 @@
 // Link handle content changes in browser and will not send server quest
 import { Link } from "react-router-dom";
 
+
 const Navbar = () => {
 
     return ( 

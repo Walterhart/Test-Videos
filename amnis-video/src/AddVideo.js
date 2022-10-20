@@ -10,6 +10,7 @@ const AddVideo = () => {
     const [source, setSource] = useState('');
     const [isPending, setIsPending] = useState(false);
     const history = useHistory();
+
     // hanlde form when sumbited
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -20,12 +21,11 @@ const AddVideo = () => {
             method: 'Post',
             headers: { "Content-Type":"application/json"},
             body: JSON.stringify(video)
-        }) .then(() => {
+        }).then(() => {
             console.log('Video submited');
             setIsPending(false);
             history.push('/');
         })
-        
     }
     return (  
         <div className="addVideo">

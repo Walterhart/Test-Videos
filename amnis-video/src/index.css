@@ -4,22 +4,30 @@
 * {
   margin: 0;
   font-family: "Quicksand";
+  
+}
+
+
+.header {
+  grid-template-columns: 1fr 1fr; 
+  background-color: #42a5f5;
+  border-bottom: 1px solid #f2f2f2; 
   color: rgb(255, 255, 255);
 }
 
 .navbar{
-  background-color:#42a5f5;
   display: flex;
-  border-bottom: 1px solid #f2f2f2;
 }
 
 .navbar .links {
   margin-left: auto;
+
 }
 
 .navbar a {
   margin-left: 16px;
   text-decoration: none;
+  color: rgb(255, 255, 255);
   padding: 6px;
 }
 
@@ -28,8 +36,8 @@
 }
 
 .content{
-  display: flex;
   background-color: #42a5f5;
+  color: rgb(255, 255, 255);
   padding: 20px;
   
 }
@@ -47,6 +55,7 @@
 }
 .VideoPreview a {
   text-decoration: none;
+  color: rgb(255, 255, 255);
 }
 .VideoPreview h2 {
   font-size: 20px;
