@@ -14,7 +14,7 @@ const Login = () => {
     return (  
         <div className="Login">
             <Grid>
-                    <Paper elevation = {25} style = {paperStyle}>  
+                    <Paper  style = {paperStyle}>  
                         <Grid align ="center" >                       
                             <h2 >Sign In</h2>                        
                         </Grid>
