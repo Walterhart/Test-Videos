@@ -1,12 +1,13 @@
-import HomePage from './HomePage';
-import Navbar from './Navbar';
+import HomePage from './WebPages/HomePage';
+import Navbar from './Header/Navbar';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AddVideo from './AddVideo';
-import VideoDetails from './VideoDetails';
-import Error404 from './Error404';
-import SignUp from './SignUp';
-import Login from './Login';
-import SignInOutTab from './SignInOutTab';
+import AddVideo from './VideoComponents/AddVideo';
+import VideoDetails from './VideoComponents/VideoDetails';
+import Error404 from './WebPages/Error404';
+import SignUp from './WebPages/SignUp';
+import Login from './WebPages/Login';
+import SignInOutTab from './WebPages/SignInOutTab';
+import TestPage from './WebPages/TestPage';
 
 
 function App() {
@@ -14,7 +15,6 @@ function App() {
   return (
    
     <Router>
-      
     <div className="App">
       <div className="header">                   
           <Navbar/>
@@ -40,6 +40,9 @@ function App() {
               <Route path = "/Sign-up">
                 <SignUp/>
               </Route>  
+              <Route path = "/TestPage">
+                <TestPage/>
+              </Route> 
               <Route path = "*">
                 <Error404/>
               </Route>          

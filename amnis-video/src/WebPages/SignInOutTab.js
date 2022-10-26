@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import SignUp from './SignUp';
-import Login from './Login';
 import { Tab, Tabs, Paper, Typography, Box } from '@mui/material';
-
-
+import Login from './Login';
 const SignInOutTab=()=>{
 const [value,setValue]=useState(0)
 const handleChange = (event, newValue) => {

@@ -1,4 +1,4 @@
-// Video List components
+// Video List component
 
 import { Link } from "react-router-dom";
 

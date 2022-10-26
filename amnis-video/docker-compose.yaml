@@ -1,0 +1,14 @@
+version: "3.8"
+
+# tell docker how to build/run image
+services:  
+  reactapp: 
+    build: ./src/dockerFiles
+    container_name: ./reactapp
+    ports: 
+      - '3000:3000'
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./src:/app
+      - ./app/node_module

@@ -1,7 +1,7 @@
-//Componet for video details
+//Component for video details
 //useParams allowed passing route parameters
 import { useParams } from 'react-router-dom';
-import useFetch from './useFetch';
+import useFetch from '../UseFiles/useFetch';
 
 const VideoDetails = () => {
     const { id }  = useParams()  

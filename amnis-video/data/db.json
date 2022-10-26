@@ -35,21 +35,19 @@
       "id": 1,
       "userName": "WalterHart",
       "password": "W@1",
-      "Email": "walter@gmail.com"
+      "email": "walter@gmail.com"
     },
     {
       "id": 2,
       "userName": "DonaldDuck",
       "password": "D@1",
-      "Email": "DD@gmail.com"
+      "email": "DD@gmail.com"
     },
     {
       "id": 3,
       "userName": "DefinitelyNotABot",
       "password": "Dab@1",
-      "Email": "Dab@gmail.com"
+      "email": "Dab@gmail.com"
     }
-    
-
   ]
 }
