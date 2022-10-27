@@ -10,8 +10,9 @@ COPY package.json .
 # install npm
 RUN npm install
 
-RUN npx install reac-router-dom@6
+RUN npm install -g serve
 
+RUN node a
 # copy source file into app directory
 COPY . .
 
@@ -20,4 +21,5 @@ EXPOSE 3000
 
 # run start script
 # required for docker desktop port mapping
-CMD ["npm","start"]
+CMD ["npm","run","start"]
+

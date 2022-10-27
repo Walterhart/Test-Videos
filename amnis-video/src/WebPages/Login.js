@@ -1,10 +1,6 @@
 import {Button, Grid, Paper, Link, TextField, Typography} from "@mui/material";
 import React, { useState } from "react";
-import FormLabel from '@mui/material/FormLabel';
-import FormControl from '@mui/material/FormControl';
-import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import FormHelperText from '@mui/material/FormHelperText';
 import Checkbox from '@mui/material/Checkbox';
 import useFetch from "../UseFiles/useFetch";
 
@@ -13,14 +9,11 @@ const Login = () => {
     const paperStyle = {padding :20, height: `auto`, width:340, margin: "40px auto"}
     const buttonStyle= {margin: "8px 0"}
     const {data: user, isPending, error} = useFetch("http://localhost:8000/userInfo");
-    const [userNamez, setUserName] = useState('');
+    const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit  = (e) =>{
         e.preventDefault();
-        { isPending && <div>Loading...</div> }
-        { error && <div>{ error } </div>}
-
     }
 
     return (  
