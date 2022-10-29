@@ -12,7 +12,6 @@ RUN npm install
 
 RUN npm install -g serve
 
-RUN node a
 # copy source file into app directory
 COPY . .
 
