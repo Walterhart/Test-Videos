@@ -1,5 +1,6 @@
 import useFetch from "../UseFiles/useFetch";
 import VideoList from "../VideoComponents/VideoList";
+import { supabase } from "../config/supabaseClient";
 
 const HomePage = () => {
    const {data: videos, isPending, error} = useFetch("http://localhost:8000/videos");

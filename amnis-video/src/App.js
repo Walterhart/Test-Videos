@@ -1,13 +1,14 @@
-import HomePage from './WebPages/HomePage';
+import HomePage from './Pages/HomePage';
 import Navbar from './Header/Navbar';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AddVideo from './VideoComponents/AddVideo';
 import VideoDetails from './VideoComponents/VideoDetails';
-import Error404 from './WebPages/Error404';
-import SignUp from './WebPages/SignUp';
-import Login from './WebPages/Login';
-import SignInOutTab from './WebPages/SignInOutTab';
-import TestPage from './WebPages/TestPage';
+import Error404 from './Pages/Error404';
+import SignUp from './Pages/SignUp';
+import Login from './Pages/Login';
+import SignInOutTab from './Pages/SignInOutTab';
+import TestPage from './Pages/TestPage';
+
 
 
 function App() {
