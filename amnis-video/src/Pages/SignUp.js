@@ -22,6 +22,7 @@ const SignUp = () => {
     const history = useHistory();
     var regExPassword = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&?])(?=.{6,10})");
 
+
     const createAccount = async(e) => {
         e.preventDefault();
         setPasswordError(false);
@@ -52,14 +53,19 @@ const SignUp = () => {
             return
         } 
 
-        const { data, error } = await supabase
-        .from('account')
-        .insert({user_name: userName, email: email, password: password})
         
-
-        if (error) {
+        
+    const { data, error} = await supabase.auth.signUp({
+        if (error)
+        {
             console.log(error)
-          }
+            return
+        },
+        email: email,
+        password: password,
+        options: { data: { user_name: userName}}
+      })
+      console.log("data sent")
 
         if (data){
             console.log(data)
