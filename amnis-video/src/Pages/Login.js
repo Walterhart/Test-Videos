@@ -10,20 +10,25 @@ const Login = () => {
 
     const paperStyle = {padding :20, height: `auto`, width:340, margin: "40px auto"}
     const buttonStyle= {margin: "8px 0"};
-    const [userName, setUserName] = useState('');
+    const [email, setemail] = useState('');
     const [password, setPassword] = useState('');
     const history = useHistory();
 
     const handleSubmit  = async (e) =>{
         e.preventDefault();
-        let { error } = await supabase.auth.signInWithPassword({
-            email: userName,
-            password: password               
+        const { data ,error} = await supabase.auth.signInWithPassword({
+            email: email,
+            password: password,
           })
+          
           if (error)
           {
               console.log("Error logging in")
               return
+          }
+          if(data)
+          {
+            console.log(data)
           }
           history.push('/')
     }
@@ -36,7 +41,7 @@ const Login = () => {
                             <h2 >Sign In</h2>                        
                         </Grid>
                             <form  onSubmit = {handleSubmit}>
-                                <TextField onChange ={(e) => setUserName(e.target.value)}  label = "Username" variant = "standard" placeholder = "Enter username" fullWidth required/>
+                                <TextField onChange ={(e) => setemail(e.target.value)}  label = "Email" variant = "standard" placeholder = "Enter email" fullWidth required/>
                                 <TextField onChange ={(e) => setPassword(e.target.value)} label = "Password" variant = "standard" placeholder = "Enter password" type = "password" fullWidth required/>
                                 <FormControlLabel
                                 control = {
@@ -62,7 +67,7 @@ const Login = () => {
                         </Typography>
                         <Typography>
                             No account? 
-                            <Link to ='/sign-up' sx= {{textDecoration:"none", m: 0.5 }}>
+                            <Link to ='/Sign-up' sx= {{textDecoration:"none", m: 0.5 }}>
                                     Sign up
                             </Link>
                         </Typography>

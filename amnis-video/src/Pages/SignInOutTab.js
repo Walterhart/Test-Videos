@@ -30,7 +30,7 @@ const handleChange = (event, newValue) => {
   }
   
     return (
-        <Paper elevation={30} style={paperStyle}>
+        <Paper style={paperStyle}>
         <Tabs
           value={value}
           indicatorColor="primary"
