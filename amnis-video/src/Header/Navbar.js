@@ -1,17 +1,20 @@
 // Navbar component
 // Link handle content changes in browser and will not send server quest
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { supabase } from "../config/supabaseClient";
 
 
 const Navbar = () => {
-
+    
     return ( 
         <nav className="navbar">
-            <h1> navbar </h1>
+            <h1> Amnis Videos </h1>
             <div className="links">
                 <Link to= "/"> Home</Link>
                 <Link to= "/add-video"> Add Video</Link>
-                <Link to= "/favorite"> Favorite</Link>          
+                <Link to= "/favorite"> Favorite</Link> 
+                <Link to= "/SignInOutTab"> Login</Link>      
             </div>
         </nav>
      );

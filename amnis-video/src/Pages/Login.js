@@ -1,19 +1,31 @@
 import {Button, Grid, Paper, Link, TextField, Typography} from "@mui/material";
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import useFetch from "../UseFiles/useFetch";
+import { supabase } from "../config/supabaseClient";
+import { useHistory} from "react-router-dom";
+
 
 const Login = () => {
 
     const paperStyle = {padding :20, height: `auto`, width:340, margin: "40px auto"}
-    const buttonStyle= {margin: "8px 0"}
-    const {data: user, isPending, error} = useFetch("http://localhost:8000/userInfo");
+    const buttonStyle= {margin: "8px 0"};
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const history = useHistory();
 
-    const handleSubmit  = (e) =>{
+    const handleSubmit  = async (e) =>{
         e.preventDefault();
+        let { error } = await supabase.auth.signInWithPassword({
+            email: userName,
+            password: password               
+          })
+          if (error)
+          {
+              console.log("Error logging in")
+              return
+          }
+          history.push('/')
     }
 
     return (  

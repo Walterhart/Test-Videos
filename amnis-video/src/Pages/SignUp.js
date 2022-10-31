@@ -1,4 +1,4 @@
-import {Button, Grid, Paper, Link, TextField, Typography} from "@mui/material";
+import {Button, Grid, Paper, TextField, Typography} from "@mui/material";
 import React, { useState } from "react";
 import { useHistory} from "react-router-dom";
 import { supabase } from "../config/supabaseClient";
@@ -56,15 +56,17 @@ const SignUp = () => {
         
         
     const { data, error} = await supabase.auth.signUp({
-        if (error)
-        {
-            console.log(error)
-            return
-        },
+       
         email: email,
         password: password,
         options: { data: { user_name: userName}}
       })
+
+      if (error)
+      {
+          console.log(error)
+          return
+      }
       console.log("data sent")
 
         if (data){
