@@ -62,7 +62,7 @@ const Login = () => {
                         </Typography>
                         <Typography>
                             No account? 
-                            <Link to ='#' sx= {{textDecoration:"none", m: 0.5 }}>
+                            <Link to ='/sign-up' sx= {{textDecoration:"none", m: 0.5 }}>
                                     Sign up
                             </Link>
                         </Typography>

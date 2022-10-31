@@ -1,8 +1,7 @@
-import React, { useState,useHistory } from 'react'
+import React, { useState } from 'react'
 import SignUp from './SignUp';
 import { Tab, Tabs, Paper, Typography, Box } from '@mui/material';
 import Login from './Login';
-
 const SignInOutTab=()=>{
 const [value,setValue]=useState(0)
 const handleChange = (event, newValue) => {
@@ -31,7 +30,7 @@ const handleChange = (event, newValue) => {
   }
   
     return (
-        <Paper  style={paperStyle}>
+        <Paper elevation={30} style={paperStyle}>
         <Tabs
           value={value}
           indicatorColor="primary"

@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import { useHistory} from "react-router-dom";
 import { supabase } from "../config/supabaseClient";
 
+
 const SignUp = () => {
 
     const paperStyle = {padding :20, height: `auto`, width:340, margin: "40px auto"};
     const buttonStyle= {margin: "8px 0"};
-    const [loading, setLoading ] = useState(true);
+    //const [loading, setLoading ] = useState(true);
     const [email, setEmail ] = useState('');
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
@@ -32,9 +33,6 @@ const SignUp = () => {
         setPasswordErrorText('');
         setUserNameError(false);
         setUserNameErrorText('');
-        setLoading(true);
-
-
         
         if(userName.charAt(0)==="_" ||userName.charAt(0)=== "-" )
         {
@@ -73,7 +71,6 @@ const SignUp = () => {
             console.log(data)
             history.push('/')
         }
-        setLoading(false);
     }
     
 
